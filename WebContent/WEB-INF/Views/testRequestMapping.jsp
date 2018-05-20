@@ -8,5 +8,7 @@
 </head>
 <body>
 <h2>Understanding RequestMapping in Detail</h2>
+
+Welcome ${userName}
 </body>
 </html>
