@@ -1,11 +1,10 @@
 package com.kajan.springmvc.psbankapp.controllers;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.kajan.springmvc.psbankapp.model.Account;
 
@@ -29,11 +28,10 @@ public class AccountController {
 	}
 	
 	@RequestMapping(value = "/saveAccount", method = RequestMethod.POST)
-	public String saveAccount(Model model, HttpServletRequest request) {
-		
-		String accountNo = request.getParameter("accountNo");
-		String customerName = request.getParameter("accountHolderName");
-		String balance = request.getParameter("balance");
+	public String saveAccount(Model model, 
+			@RequestParam("accountNo") String accountNo,
+			@RequestParam("accountHolderName") String customerName,
+			@RequestParam("balance") String balance) {
 		
 		Account account = new Account();
 		account.setAccountNo(Integer.parseInt(accountNo));
