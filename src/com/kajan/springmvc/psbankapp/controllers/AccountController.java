@@ -28,18 +28,8 @@ public class AccountController {
 	}
 	
 	@RequestMapping(value = "/saveAccount", method = RequestMethod.POST)
-	public String saveAccount(Model model, 
-			@RequestParam("accountNo") String accountNo,
-			@RequestParam("accountHolderName") String customerName,
-			@RequestParam("balance") String balance) {
-		
-		Account account = new Account();
-		account.setAccountNo(Integer.parseInt(accountNo));
-		account.setAccountHolderName(customerName);
-		account.setBalance(Integer.parseInt(balance));
-		
+	public String saveAccount(Model model, Account account) {
 		model.addAttribute("account", account);
-		
 		return "showAccount";
 	}
 
