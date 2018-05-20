@@ -8,5 +8,6 @@
 </head>
 <body>
 <h1>Welcome to PS Bank Application</h1>
+<a href="new">Create New Account</a>
 </body>
 </html>
